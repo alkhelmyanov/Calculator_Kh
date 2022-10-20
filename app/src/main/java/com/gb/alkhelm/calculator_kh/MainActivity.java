@@ -9,13 +9,17 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     double answer = 0.0;
-    double [] solution;
+    double[] solution;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        initialization();
+    }
+
+    private void initialization() {
         TextView mainTextView = findViewById(R.id.mainView);
 
         Button buttonZero = findViewById(R.id._0);
@@ -36,4 +40,5 @@ public class MainActivity extends AppCompatActivity {
         Button buttonEqually = findViewById(R.id.equally);
         Button buttonClear = findViewById(R.id.clear);
     }
+
 }
