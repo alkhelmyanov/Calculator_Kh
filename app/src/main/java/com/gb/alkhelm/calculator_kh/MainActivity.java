@@ -31,11 +31,14 @@ public class MainActivity extends AppCompatActivity {
     Button buttonClear;
 
     int answer;
-    int firstNumber;
+    // firstNumber;
+    String firstNumber;
     int secondNumber;
+    String action;
     int numberOfPosition;
     char[] solution;
     String number = "";
+    boolean isActionOn = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     private void addListeners() {
 
         // Добавляем слушатели на кнопки
-        View.OnClickListener buttonOnClickListener = new View.OnClickListener() {
+        View.OnClickListener numberButtonOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 switch (view.getId()) {
@@ -110,16 +113,57 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        buttonOne.setOnClickListener(buttonOnClickListener);
-        buttonTwo.setOnClickListener(buttonOnClickListener);
-        buttonThree.setOnClickListener(buttonOnClickListener);
-        buttonFour.setOnClickListener(buttonOnClickListener);
-        buttonFive.setOnClickListener(buttonOnClickListener);
-        buttonSix.setOnClickListener(buttonOnClickListener);
-        buttonSeven.setOnClickListener(buttonOnClickListener);
-        buttonEight.setOnClickListener(buttonOnClickListener);
-        buttonNine.setOnClickListener(buttonOnClickListener);
-        buttonZero.setOnClickListener(buttonOnClickListener);
+        buttonOne.setOnClickListener(numberButtonOnClickListener);
+        buttonTwo.setOnClickListener(numberButtonOnClickListener);
+        buttonThree.setOnClickListener(numberButtonOnClickListener);
+        buttonFour.setOnClickListener(numberButtonOnClickListener);
+        buttonFive.setOnClickListener(numberButtonOnClickListener);
+        buttonSix.setOnClickListener(numberButtonOnClickListener);
+        buttonSeven.setOnClickListener(numberButtonOnClickListener);
+        buttonEight.setOnClickListener(numberButtonOnClickListener);
+        buttonNine.setOnClickListener(numberButtonOnClickListener);
+        buttonZero.setOnClickListener(numberButtonOnClickListener);
+
+
+        View.OnClickListener actionButtonOnClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+                switch (view.getId()) {
+                    case (R.id.plus): {
+                        action = "+";
+                        break;
+                    }
+                    case (R.id.minus): {
+                        action = "-";
+                        break;
+                    }
+                    case (R.id.divide): {
+                        action = "/";
+                        break;
+                    }
+                    case (R.id.multiply): {
+                        action = "*";
+                        break;
+                    }
+
+                }
+
+                firstNumber = mainTextView.getText().toString();
+                number = "";
+                mainTextView.setText(number);
+
+
+            }
+        };
+
+        buttonPlus.setOnClickListener(actionButtonOnClickListener);
+        buttonMinus.setOnClickListener(actionButtonOnClickListener);
+        buttonDivide.setOnClickListener(actionButtonOnClickListener);
+        buttonMultiply.setOnClickListener(actionButtonOnClickListener);
+
 
     }
 
