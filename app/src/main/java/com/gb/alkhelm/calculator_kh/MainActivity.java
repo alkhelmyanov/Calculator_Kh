@@ -36,69 +36,93 @@ public class MainActivity extends AppCompatActivity {
     int numberOfPosition;
     char[] solution;
     String number = "";
-    String actionSpy = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initButton();
-        //addListeners();
+        initButton(); // Инициализируем кнопки
+        addListeners(); // Добавляем слушатели на кнопки
 
 
-       /* if (Objects.equals(actionSpy, "+")){
-            firstNumber = Integer.parseInt(number);
-            number = "";
-        }else{
-
-        }*/
-
-        buttonOne.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //actionSpy = String.valueOf(buttonOne.getText());
-                number = number + buttonOne.getText();
-                mainTextView.setText(number);
-
-            }
-        });
-
-        buttonTwo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                actionSpy = String.valueOf(buttonTwo.getText());
-                number = number + buttonTwo.getText();
-                mainTextView.setText(number);
-
-            }
-        });
-
-        buttonPlus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
 
     }
 
-    /*private void addListeners() {
+    private void addListeners() {
 
-    }
-
-    View.OnClickListener listener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            switch (view.getId()){
-                case (R.id._0):{
-                    String number = String.valueOf(buttonZero.getText());
-                    mainTextView.setText("1");
-                    break;
+        // Добавляем слушатели на кнопки
+        View.OnClickListener buttonOnClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (view.getId()) {
+                    case (R.id._1): {
+                        number = number + buttonOne.getText();
+                        mainTextView.setText(number);
+                        break;
+                    }
+                    case (R.id._2): {
+                        number = number + buttonTwo.getText();
+                        mainTextView.setText(number);
+                        break;
+                    }
+                    case (R.id._3): {
+                        number = number + buttonThree.getText();
+                        mainTextView.setText(number);
+                        break;
+                    }
+                    case (R.id._4): {
+                        number = number + buttonFour.getText();
+                        mainTextView.setText(number);
+                        break;
+                    }
+                    case (R.id._5): {
+                        number = number + buttonFive.getText();
+                        mainTextView.setText(number);
+                        break;
+                    }
+                    case (R.id._6): {
+                        number = number + buttonSix.getText();
+                        mainTextView.setText(number);
+                        break;
+                    }
+                    case (R.id._7): {
+                        number = number + buttonSeven.getText();
+                        mainTextView.setText(number);
+                        break;
+                    }
+                    case (R.id._8): {
+                        number = number + buttonEight.getText();
+                        mainTextView.setText(number);
+                        break;
+                    }
+                    case (R.id._9): {
+                        number = number + buttonNine.getText();
+                        mainTextView.setText(number);
+                        break;
+                    }
+                    case (R.id._0): {
+                        number = number + buttonZero.getText();
+                        mainTextView.setText(number);
+                        break;
+                    }
                 }
             }
-        }
-    };*/
+        };
+
+        buttonOne.setOnClickListener(buttonOnClickListener);
+        buttonTwo.setOnClickListener(buttonOnClickListener);
+        buttonThree.setOnClickListener(buttonOnClickListener);
+        buttonFour.setOnClickListener(buttonOnClickListener);
+        buttonFive.setOnClickListener(buttonOnClickListener);
+        buttonSix.setOnClickListener(buttonOnClickListener);
+        buttonSeven.setOnClickListener(buttonOnClickListener);
+        buttonEight.setOnClickListener(buttonOnClickListener);
+        buttonNine.setOnClickListener(buttonOnClickListener);
+        buttonZero.setOnClickListener(buttonOnClickListener);
+
+    }
+
 
     private void initButton() {
 
