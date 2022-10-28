@@ -3,11 +3,15 @@ package com.gb.alkhelm.calculator_kh;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
 
+    TextView mainTextView;
     Button buttonZero;
     Button buttonOne;
     Button buttonTwo;
@@ -26,42 +30,99 @@ public class MainActivity extends AppCompatActivity {
     Button buttonEqually;
     Button buttonClear;
 
-    double answer = 0.0;
+    int answer;
+    int firstNumber;
+    int secondNumber;
+    int numberOfPosition;
+    char[] solution;
+    String number = "";
+    String actionSpy = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initialization();
-        listeners();
+        initButton();
+        //addListeners();
+
+
+       /* if (Objects.equals(actionSpy, "+")){
+            firstNumber = Integer.parseInt(number);
+            number = "";
+        }else{
+
+        }*/
+
+        buttonOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //actionSpy = String.valueOf(buttonOne.getText());
+                number = number + buttonOne.getText();
+                mainTextView.setText(number);
+
+            }
+        });
+
+        buttonTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                actionSpy = String.valueOf(buttonTwo.getText());
+                number = number + buttonTwo.getText();
+                mainTextView.setText(number);
+
+            }
+        });
+
+        buttonPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
     }
 
-
-    private void initialization() {
-        TextView mainTextView = findViewById(R.id.mainView);
-
-        Button buttonZero = findViewById(R.id._0);
-        Button buttonOne = findViewById(R.id._1);
-        Button buttonTwo = findViewById(R.id._2);
-        Button buttonThree = findViewById(R.id._3);
-        Button buttonFour = findViewById(R.id._4);
-        Button buttonFive = findViewById(R.id._5);
-        Button buttonSix = findViewById(R.id._6);
-        Button buttonSeven = findViewById(R.id._7);
-        Button buttonEight = findViewById(R.id._8);
-        Button buttonNine = findViewById(R.id._9);
-        Button buttonDot = findViewById(R.id.dot);
-        Button buttonPlus = findViewById(R.id.plus);
-        Button buttonMinus = findViewById(R.id.minus);
-        Button buttonDivide = findViewById(R.id.divide);
-        Button buttonMultiply = findViewById(R.id.multiply);
-        Button buttonEqually = findViewById(R.id.equally);
-        Button buttonClear = findViewById(R.id.clear);
-    }
-
-    private void listeners() {
+    /*private void addListeners() {
 
     }
+
+    View.OnClickListener listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()){
+                case (R.id._0):{
+                    String number = String.valueOf(buttonZero.getText());
+                    mainTextView.setText("1");
+                    break;
+                }
+            }
+        }
+    };*/
+
+    private void initButton() {
+
+        mainTextView = findViewById(R.id.mainView);
+
+        buttonZero = findViewById(R.id._0);
+        buttonOne = findViewById(R.id._1);
+        buttonTwo = findViewById(R.id._2);
+        buttonThree = findViewById(R.id._3);
+        buttonFour = findViewById(R.id._4);
+        buttonFive = findViewById(R.id._5);
+        buttonSix = findViewById(R.id._6);
+        buttonSeven = findViewById(R.id._7);
+        buttonEight = findViewById(R.id._8);
+        buttonNine = findViewById(R.id._9);
+        buttonDot = findViewById(R.id.dot);
+        buttonPlus = findViewById(R.id.plus);
+        buttonMinus = findViewById(R.id.minus);
+        buttonDivide = findViewById(R.id.divide);
+        buttonMultiply = findViewById(R.id.multiply);
+        buttonEqually = findViewById(R.id.equally);
+        buttonClear = findViewById(R.id.clear);
+
+    }
+
 
 }
