@@ -1,7 +1,9 @@
 package com.gb.alkhelm.calculator_kh;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,15 +32,10 @@ public class MainActivity extends AppCompatActivity {
     Button buttonEqually;
     Button buttonClear;
 
-    int answer;
-    // firstNumber;
-    String firstNumber;
-    int secondNumber;
-    String action;
-    int numberOfPosition;
-    char[] solution;
-    String number = "";
-    boolean isActionOn = false;
+    String firstNumber; // хранит число для вычисления
+    double result = 0.0;
+    String actionFunctionButton;
+    boolean isFully = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,70 +45,150 @@ public class MainActivity extends AppCompatActivity {
         initButton(); // Инициализируем кнопки
         addListeners(); // Добавляем слушатели на кнопки
 
-
-
     }
 
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putDouble("result", result);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        result = savedInstanceState.getDouble("result");
+        mainTextView.setText(String.valueOf(result));
+    }
+
+    // Добавляем слушатели на кнопки и действие на них
     private void addListeners() {
 
-        // Добавляем слушатели на кнопки
+        // Реакция на действия нажатия цифровых кнопок
+
         View.OnClickListener numberButtonOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 switch (view.getId()) {
                     case (R.id._1): {
-                        number = number + buttonOne.getText();
-                        mainTextView.setText(number);
+                        firstNumber = mainTextView.getText() + "1";
                         break;
                     }
                     case (R.id._2): {
-                        number = number + buttonTwo.getText();
-                        mainTextView.setText(number);
+                        firstNumber = mainTextView.getText() + "2";
                         break;
                     }
                     case (R.id._3): {
-                        number = number + buttonThree.getText();
-                        mainTextView.setText(number);
+                        firstNumber = mainTextView.getText() + "3";
                         break;
                     }
                     case (R.id._4): {
-                        number = number + buttonFour.getText();
-                        mainTextView.setText(number);
+                        firstNumber = mainTextView.getText() + "4";
                         break;
                     }
                     case (R.id._5): {
-                        number = number + buttonFive.getText();
-                        mainTextView.setText(number);
+                        firstNumber = mainTextView.getText() + "5";
                         break;
                     }
                     case (R.id._6): {
-                        number = number + buttonSix.getText();
-                        mainTextView.setText(number);
+                        firstNumber = mainTextView.getText() + "6";
                         break;
                     }
                     case (R.id._7): {
-                        number = number + buttonSeven.getText();
-                        mainTextView.setText(number);
+                        firstNumber = mainTextView.getText() + "7";
                         break;
                     }
                     case (R.id._8): {
-                        number = number + buttonEight.getText();
-                        mainTextView.setText(number);
+                        firstNumber = mainTextView.getText() + "8";
                         break;
                     }
                     case (R.id._9): {
-                        number = number + buttonNine.getText();
-                        mainTextView.setText(number);
+                        firstNumber = mainTextView.getText() + "9";
                         break;
                     }
                     case (R.id._0): {
-                        number = number + buttonZero.getText();
-                        mainTextView.setText(number);
+                        firstNumber = mainTextView.getText() + "0";
                         break;
+                    }
+                    case (R.id.dot): {
+                        firstNumber = mainTextView.getText() + ".";
+                    }
+                }
+                mainTextView.setText(firstNumber);
+            }
+        };
+
+
+        // Реакция на действие функциональных кнопок
+
+        View.OnClickListener actionButtonOnClickListener = new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                // Затираем значения экрана
+                if (isFully) {
+                    mainTextView.setText("");
+
+                    // обрабатываем действие функциональных кнопок
+                    switch (view.getId()) {
+                        case (R.id.plus): {
+                            //mainTextView.setText(String.valueOf(result));
+                            actionFunctionButton = "+";
+                            break;
+                        }
+                        case (R.id.minus): {
+                            //mainTextView.setText(String.valueOf(result));
+                            actionFunctionButton = "-";
+                            break;
+                        }
+                        case (R.id.divide): {
+                            //mainTextView.setText(String.valueOf(result));
+                            actionFunctionButton = "/";
+                            break;
+                        }
+                        case (R.id.multiply): {
+                            //mainTextView.setText(String.valueOf(result));
+                            actionFunctionButton = "*";
+                            break;
+                        }
+                        case (R.id.clear): {
+                            mainTextView.setText("");
+                            result = 0.0;
+                        }
                     }
                 }
             }
         };
+
+        // Реакци на действия кнопки "Равно"
+        buttonEqually.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (actionFunctionButton) {
+                    case ("+"): {
+                        result = result + Double.parseDouble(firstNumber);
+                        mainTextView.setText(String.valueOf(result));
+                        break;
+                    }
+                    case ("-"): {
+                        result = result - Double.parseDouble(firstNumber);
+                        mainTextView.setText(String.valueOf(result));
+                        break;
+                    }
+                    case ("/"): {
+                        result = result / Double.parseDouble(firstNumber);
+                        mainTextView.setText(String.valueOf(result));
+                        break;
+                    }
+                    case ("*"): {
+                        result = result * Double.parseDouble(firstNumber);
+                        mainTextView.setText(String.valueOf(result));
+                        break;
+                    }
+                }
+
+            }
+        });
 
         buttonOne.setOnClickListener(numberButtonOnClickListener);
         buttonTwo.setOnClickListener(numberButtonOnClickListener);
@@ -123,47 +200,13 @@ public class MainActivity extends AppCompatActivity {
         buttonEight.setOnClickListener(numberButtonOnClickListener);
         buttonNine.setOnClickListener(numberButtonOnClickListener);
         buttonZero.setOnClickListener(numberButtonOnClickListener);
-
-
-        View.OnClickListener actionButtonOnClickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-
-                switch (view.getId()) {
-                    case (R.id.plus): {
-                        action = "+";
-                        break;
-                    }
-                    case (R.id.minus): {
-                        action = "-";
-                        break;
-                    }
-                    case (R.id.divide): {
-                        action = "/";
-                        break;
-                    }
-                    case (R.id.multiply): {
-                        action = "*";
-                        break;
-                    }
-
-                }
-
-                firstNumber = mainTextView.getText().toString();
-                number = "";
-                mainTextView.setText(number);
-
-
-            }
-        };
+        buttonDot.setOnClickListener(numberButtonOnClickListener);
 
         buttonPlus.setOnClickListener(actionButtonOnClickListener);
         buttonMinus.setOnClickListener(actionButtonOnClickListener);
         buttonDivide.setOnClickListener(actionButtonOnClickListener);
         buttonMultiply.setOnClickListener(actionButtonOnClickListener);
-
+        buttonClear.setOnClickListener(actionButtonOnClickListener);
 
     }
 
