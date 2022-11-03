@@ -45,7 +45,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.3" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/clear"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
         app:layout_constraintTop_toBottomOf="@+id/guideline"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/_4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/_1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/_2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -85,7 +85,7 @@
         app:layout_constraintStart_toEndOf="@+id/_1"
         app:layout_constraintTop_toBottomOf="@+id/clear" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/divide"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
         app:layout_constraintStart_toEndOf="@+id/_6"
         app:layout_constraintTop_toBottomOf="@+id/minus" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/minus"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -111,7 +111,7 @@
         app:layout_constraintStart_toEndOf="@+id/_3"
         app:layout_constraintTop_toBottomOf="@+id/plus" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -125,7 +125,7 @@
         app:layout_constraintTop_toBottomOf="@+id/clear"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/_8"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -138,7 +138,7 @@
         app:layout_constraintStart_toEndOf="@+id/_7"
         app:layout_constraintTop_toBottomOf="@+id/_5" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/_7"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -151,7 +151,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/_4" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/equally"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -164,7 +164,7 @@
         app:layout_constraintStart_toEndOf="@+id/_0"
         app:layout_constraintTop_toBottomOf="@+id/multiply" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/multiply"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -177,7 +177,7 @@
         app:layout_constraintStart_toEndOf="@+id/_9"
         app:layout_constraintTop_toBottomOf="@+id/divide" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/_0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -189,7 +189,7 @@
         app:layout_constraintStart_toEndOf="@+id/dot"
         app:layout_constraintTop_toBottomOf="@+id/_8" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/_3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -202,7 +202,7 @@
         app:layout_constraintStart_toEndOf="@+id/_2"
         app:layout_constraintTop_toBottomOf="@+id/clear" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/plus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -216,7 +216,7 @@
         app:layout_constraintTop_toBottomOf="@+id/guideline"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/_6"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -229,7 +229,7 @@
         app:layout_constraintStart_toEndOf="@+id/_5"
         app:layout_constraintTop_toBottomOf="@+id/_3" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/_9"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -242,7 +242,7 @@
         app:layout_constraintStart_toEndOf="@+id/_8"
         app:layout_constraintTop_toBottomOf="@+id/_6" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/_5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -255,7 +255,7 @@
         app:layout_constraintStart_toEndOf="@+id/_4"
         app:layout_constraintTop_toBottomOf="@+id/_2" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/dot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
