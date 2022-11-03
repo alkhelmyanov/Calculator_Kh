@@ -17,4 +17,5 @@
     <string name="equally">=</string>
     <string name="dot">.</string>
     <string name="clear">C</string>
+    <string name="mainText">Calculator</string>
 </resources>
