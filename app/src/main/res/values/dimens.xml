@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="buttonTextSize">20sp</dimen>
-
+    <dimen name="keyTextSize">40sp</dimen>
+    <dimen name="buttonMarginHorizontal">1dp</dimen>
 
 
 </resources>
