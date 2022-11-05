@@ -12,20 +12,23 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <item name="materialButtonStyle">@style/MyButtonDayStyleThemes</item>
+
     </style>
 
-    <style name="MyDayStyleThemes" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="MyStyleThemes" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorRed</item>
+
     </style>
 
-    <style name="MyButtonDayStyleThemes" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="MyButtonDayStyleThemes" parent="Widget.MaterialComponents.Button">
         <item name="backgroundTint">@color/buttonDayBackground</item>
-        <item name="android:textSize">@dimen/keyTextSize</item>
         <item name="fontStyle">@font/autour_one</item>
         <item name="android:layout_marginHorizontal">@dimen/buttonMarginHorizontal</item>
-
-
     </style>
+
 </resources>

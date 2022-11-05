@@ -8,20 +8,18 @@
     android:background="@drawable/book_wood"
     tools:context=".MainActivity">
 
-
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/mainView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="20dp"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="35sp"
+        android:textSize="@dimen/textSizeHorizontal"
         android:textStyle="bold"
-
         app:layout_constraintBottom_toTopOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -29,7 +27,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/clear"
@@ -39,7 +51,7 @@
         app:layout_constraintBottom_toTopOf="@+id/_2"
         app:layout_constraintEnd_toStartOf="@+id/plus"
         app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
         app:layout_constraintTop_toBottomOf="@+id/guideline"
         app:layout_constraintVertical_chainStyle="packed" />
 
@@ -51,7 +63,7 @@
         app:layout_constraintBottom_toTopOf="@+id/_7"
         app:layout_constraintEnd_toStartOf="@+id/_5"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
         app:layout_constraintTop_toBottomOf="@+id/_1" />
 
     <com.google.android.material.button.MaterialButton
@@ -59,7 +71,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/_2"
-        android:layout_marginHorizontal="4dp"
         app:layout_constraintBottom_toTopOf="@+id/_5"
         app:layout_constraintEnd_toStartOf="@+id/_3"
         app:layout_constraintHorizontal_bias="0.5"
@@ -71,9 +82,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/divide"
-
         app:layout_constraintBottom_toTopOf="@+id/multiply"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/_6"
         app:layout_constraintTop_toBottomOf="@+id/minus" />
@@ -84,7 +94,7 @@
         android:layout_height="wrap_content"
         android:text="@string/minus"
         app:layout_constraintBottom_toTopOf="@+id/divide"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/_3"
         app:layout_constraintTop_toBottomOf="@+id/plus" />
@@ -97,7 +107,7 @@
         app:layout_constraintBottom_toTopOf="@+id/_4"
         app:layout_constraintEnd_toStartOf="@+id/_2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
         app:layout_constraintTop_toBottomOf="@+id/clear"
         app:layout_constraintVertical_chainStyle="packed" />
 
@@ -120,7 +130,7 @@
         app:layout_constraintBottom_toTopOf="@+id/dot"
         app:layout_constraintEnd_toStartOf="@+id/_8"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
         app:layout_constraintTop_toBottomOf="@+id/_4" />
 
     <com.google.android.material.button.MaterialButton
@@ -129,7 +139,7 @@
         android:layout_height="wrap_content"
         android:text="@string/equally"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/_0"
         app:layout_constraintTop_toBottomOf="@+id/multiply" />
@@ -140,7 +150,7 @@
         android:layout_height="wrap_content"
         android:text="@string/multiply"
         app:layout_constraintBottom_toTopOf="@+id/equally"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/_9"
         app:layout_constraintTop_toBottomOf="@+id/divide" />
@@ -172,7 +182,7 @@
         android:layout_height="wrap_content"
         android:text="@string/plus"
         app:layout_constraintBottom_toTopOf="@+id/minus"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/clear"
         app:layout_constraintTop_toBottomOf="@+id/guideline"
@@ -215,11 +225,11 @@
         android:id="@+id/dot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/dot"
         android:layout_marginHorizontal="4dp"
+        android:text="@string/dot"
         app:layout_constraintEnd_toStartOf="@+id/_0"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
         app:layout_constraintTop_toBottomOf="@+id/_7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
