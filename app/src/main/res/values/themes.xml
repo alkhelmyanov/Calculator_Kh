@@ -12,8 +12,8 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-
         <item name="materialButtonStyle">@style/MyButtonDayStyleThemes</item>
+        <item name="android:textColor">@color/white</item>
 
     </style>
 
@@ -21,7 +21,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColor">@color/colorRed</item>
+
 
     </style>
 

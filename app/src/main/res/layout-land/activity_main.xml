@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="5dp"
-    android:background="@drawable/book_wood"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/horizon_sky_sunrise">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/mainView"
@@ -14,7 +14,6 @@
         android:layout_height="0dp"
         android:layout_margin="20dp"
         android:gravity="center"
-        android:textColor="@color/white"
         android:textSize="@dimen/textSizeHorizontal"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
@@ -225,7 +224,6 @@
         android:id="@+id/dot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="4dp"
         android:text="@string/dot"
         app:layout_constraintEnd_toStartOf="@+id/_0"
         app:layout_constraintHorizontal_bias="0.5"

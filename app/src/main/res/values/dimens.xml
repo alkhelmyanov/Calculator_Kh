@@ -2,8 +2,10 @@
 <resources>
     <dimen name="keyVerticalTextSize">40sp</dimen>
     <dimen name="keyHorizontalTextSize">25sp</dimen>
-    <dimen name="buttonMarginHorizontal">4dp</dimen>
+    <dimen name="buttonMarginHorizontal">10dp</dimen>
     <dimen name="textSizeHorizontal">35sp</dimen>
+    <dimen name="textSizeVertical">40sp</dimen>
+    <dimen name="textSizeTitle">20sp</dimen>
 
 
 </resources>
