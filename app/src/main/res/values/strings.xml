@@ -18,4 +18,8 @@
     <string name="dot">.</string>
     <string name="clear">C</string>
     <string name="mainText">Calculator</string>
+    <string name="main_themes_text">Выберите цвет темы:</string>
+    <string name="red_themes">Red_Themes</string>
+    <string name="green_themes">Green_Themes</string>
+    <string name="blue_themes">Blue_Themes</string>
 </resources>

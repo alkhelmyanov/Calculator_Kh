@@ -6,6 +6,7 @@
     <dimen name="textSizeHorizontal">35sp</dimen>
     <dimen name="textSizeVertical">40sp</dimen>
     <dimen name="textSizeTitle">20sp</dimen>
+    <dimen name="main_text_view_themes_text_size">30sp</dimen>
 
 
 </resources>
