@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -36,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
     double result = 0.0;
     String actionFunctionButton;
     boolean isFully = true;
+
+    static final String PREFERENCE_NAME = "MyDataBaseForCalculator";
+    static final String PREFERENCE_THEME_NAME = "MyDataBaseForCalculator";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -235,5 +239,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // Сохранение настроек в базу данных shared preference
+    protected void saveThemes(int codeStyle) {
+        SharedPreferences sharedPreferences = getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(PREFERENCE_THEME_NAME,codeStyle);
+        editor.apply();
+    }
 
+    protected void getThemes() {
+        SharedPreferences sharedPreferences = getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
+        return sharedPreferences.getInt(PREFERENCE_THEME_NAME,R.style.MyStyleThemes); // R.style.MyStyleThemes стоит на шару
 }
