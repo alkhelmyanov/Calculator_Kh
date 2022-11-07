@@ -38,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
     String actionFunctionButton;
     boolean isFully = true;
 
-    static final String PREFERENCE_NAME = "MyDataBaseForCalculator";
-    static final String PREFERENCE_THEME_NAME = "MyDataBaseForCalculator";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -238,16 +236,4 @@ public class MainActivity extends AppCompatActivity {
         buttonClear = findViewById(R.id.clear);
 
     }
-
-    // Сохранение настроек в базу данных shared preference
-    protected void saveThemes(int codeStyle) {
-        SharedPreferences sharedPreferences = getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt(PREFERENCE_THEME_NAME,codeStyle);
-        editor.apply();
-    }
-
-    protected void getThemes() {
-        SharedPreferences sharedPreferences = getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
-        return sharedPreferences.getInt(PREFERENCE_THEME_NAME,R.style.MyStyleThemes); // R.style.MyStyleThemes стоит на шару
 }

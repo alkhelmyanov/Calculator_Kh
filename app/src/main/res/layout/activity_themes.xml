@@ -14,39 +14,39 @@
         android:text="@string/main_themes_text"
         android:textSize="@dimen/main_text_view_themes_text_size"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/radioButton"
+        app:layout_constraintBottom_toTopOf="@+id/rb_red_themes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread" />
 
     <RadioButton
-        android:id="@+id/radioButton"
+        android:id="@+id/rb_red_themes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/red_themes"
-        app:layout_constraintBottom_toTopOf="@+id/radioButton2"
+        app:layout_constraintBottom_toTopOf="@+id/rb_green_themes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <RadioButton
-        android:id="@+id/radioButton2"
+        android:id="@+id/rb_green_themes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/green_themes"
-        app:layout_constraintBottom_toTopOf="@+id/radioButton3"
+        app:layout_constraintBottom_toTopOf="@+id/rb_blue_themes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton" />
+        app:layout_constraintTop_toBottomOf="@+id/rb_red_themes" />
 
     <RadioButton
-        android:id="@+id/radioButton3"
+        android:id="@+id/rb_blue_themes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/blue_themes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton2" />
+        app:layout_constraintTop_toBottomOf="@+id/rb_green_themes" />
 </androidx.constraintlayout.widget.ConstraintLayout>
