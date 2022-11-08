@@ -22,4 +22,5 @@
     <string name="red_themes">Red_Themes</string>
     <string name="green_themes">Green_Themes</string>
     <string name="blue_themes">Blue_Themes</string>
+    <string name="button_change_themes">Change_Themes</string>
 </resources>

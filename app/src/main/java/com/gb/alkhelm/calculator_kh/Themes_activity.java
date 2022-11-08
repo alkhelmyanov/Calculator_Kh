@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.RadioButton;
 
 public class Themes_activity extends AppCompatActivity {
@@ -21,6 +22,22 @@ public class Themes_activity extends AppCompatActivity {
         setContentView(R.layout.activity_themes);
 
         initButton();
+
+        View.OnClickListener rbOnClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (view.getId()) {
+                    case (R.id.rb_red_themes):
+
+
+
+                }
+            }
+        };
+
+        rb_red_themes.setOnClickListener(rbOnClickListener);
+        rb_green_themes.setOnClickListener(rbOnClickListener);
+        rb_blue_themes.setOnClickListener(rbOnClickListener);
     }
 
     private void initButton() {

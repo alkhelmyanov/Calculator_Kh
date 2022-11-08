@@ -31,4 +31,22 @@
         <item name="android:layout_marginHorizontal">@dimen/buttonMarginHorizontal</item>
     </style>
 
+    <style name="myRedThemes" parent="Theme.Calculator_Kh">
+        <item name="android:navigationBarColor">@color/red_1</item>
+        <item name="colorPrimary">@color/red_2</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/red_3</item>
+        <item name="colorOnPrimaryContainer">@color/red_4</item>
+        <item name="colorPrimaryInverse">@color/red_5</item>
+        <item name="colorSecondary">@color/red_6</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/red_7</item>
+        <item name="colorOnSecondaryContainer">@color/red_1</item>
+        <item name="colorTertiary">@color/red_2</item>
+        <item name="colorOnTertiary">@color/white</item>
+        <item name="colorTertiaryContainer">@color/red_6</item>
+        <item name="colorOnTertiaryContainer">@color/red_1</item>
+        <item name="android:statusBarColor">@color/red_5</item>
+    </style>
+
 </resources>

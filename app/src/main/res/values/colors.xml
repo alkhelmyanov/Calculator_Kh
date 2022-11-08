@@ -14,4 +14,13 @@
     <color name="colorRed">#BA0000</color>
     <color name="colorGrey">#5A5A5A</color>
 
+    <color name="red_1">#F8D4D3</color>
+    <color name="red_2">#FB4844</color>
+    <color name="red_3">#FF4234</color>
+    <color name="red_4">#FB3D2F</color>
+    <color name="red_5">#D72A2A</color>
+    <color name="red_6">#C82424</color>
+    <color name="red_7">#AE0B0B</color>
+
+
 </resources>
