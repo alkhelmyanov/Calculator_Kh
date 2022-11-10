@@ -23,4 +23,6 @@
     <string name="green_themes">Green_Themes</string>
     <string name="blue_themes">Blue_Themes</string>
     <string name="button_change_themes">Change_Themes</string>
+    <string name="Button_install">Install</string>
+    <string name="default_themes">default_themes</string>
 </resources>

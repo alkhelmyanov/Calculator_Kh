@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -32,11 +33,15 @@ public class MainActivity extends AppCompatActivity {
     Button buttonMultiply;
     Button buttonEqually;
     Button buttonClear;
+    Button buttonChangeTheme;
 
     String firstNumber; // хранит число для вычисления
-    double result = 0.0;
     String actionFunctionButton;
+    double result = 0.0;
     boolean isFully = true;
+
+    public static String KEY_INTENT = "KeyOne";
+    public static int REQUEST_KEY = 222;
 
 
     @Override
@@ -210,6 +215,14 @@ public class MainActivity extends AppCompatActivity {
         buttonMultiply.setOnClickListener(actionButtonOnClickListener);
         buttonClear.setOnClickListener(actionButtonOnClickListener);
 
+        buttonChangeTheme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Themes_activity.class);
+                startActivityForResult(intent, REQUEST_KEY);
+            }
+        });
+
     }
 
 
@@ -234,6 +247,7 @@ public class MainActivity extends AppCompatActivity {
         buttonMultiply = findViewById(R.id.multiply);
         buttonEqually = findViewById(R.id.equally);
         buttonClear = findViewById(R.id.clear);
+        buttonChangeTheme = findViewById(R.id.btnChangeThemes);
 
     }
 }
